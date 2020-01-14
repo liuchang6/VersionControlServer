@@ -1,0 +1,6 @@
+pip install GitPython
+pip install djangorestframework
+pip install django-filter
+pip install markdown
+pip install django-cors-headers
+pip install mysqlclient
