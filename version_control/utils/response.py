@@ -4,6 +4,11 @@
 # @Email   : 499926587@qq.com
 # @File    : response.py
 # @Software: PyCharm
+BASE = {
+    "code": "0000",
+    "success": True,
+    "data": ""
+}
 
 PROJECT_ADD_SUCCESS = {
     "code": "0001",
