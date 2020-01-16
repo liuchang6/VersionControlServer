@@ -12,9 +12,12 @@ class ServerInfoSerializer(serializers.ModelSerializer):
     """
     服务信息序列化
     """
-    update_time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S', required=False)
-    create_time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S', required=False)
+    status = serializers.CharField( read_only=True)
+    password = serializers.CharField(required=True,write_only=True)
+    check_time = serializers.DateTimeField(read_only=True,format='%Y-%m-%d %H:%M:%S', required=False)
+    update_time = serializers.DateTimeField(read_only=True,format='%Y-%m-%d %H:%M:%S', required=False)
+    create_time = serializers.DateTimeField(read_only=True,format='%Y-%m-%d %H:%M:%S', required=False)
     class Meta:
         model = ServerInfo
-        fields = '__all__'
+        exclude  = ['delete']
 

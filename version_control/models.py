@@ -16,12 +16,15 @@ class ServerInfo(models.Model):
 
     name = models.CharField(max_length = 50,verbose_name = '名称')
     desc = models.CharField(max_length=2000, blank=True, null=True, verbose_name='描述')
+    port = models.CharField(max_length=10, verbose_name='端口')
+    user = models.CharField(max_length=50, verbose_name='用户名')
     ip = models.GenericIPAddressField(verbose_name = 'IP地址')
     password = models.CharField(max_length=50, verbose_name='密码')
     status = models.CharField(max_length=1, verbose_name='状态',choices=status_choices)
+    check_time = models.DateTimeField('上次检测时间', auto_now_add=True)
     create_time = models.DateTimeField('创建时间', auto_now_add=True)
-    update_time = models.DateTimeField('更新时间', auto_now=True)
-    delete = models.CharField(max_length = 1,verbose_name = '是否删除',choices=delete_choices)
+    update_time = models.DateTimeField('更新时间', auto_now_add=True)
+    delete = models.CharField(max_length = 1,verbose_name = '是否删除',choices=delete_choices,default=1)
 
 
     class Meta():
