@@ -13,7 +13,7 @@ from rest_framework.response import Response
 from version_control.models import ServerInfo
 from version_control.serializers import ServerInfoSerializer
 from version_control.utils.response import *
-from version_control.utils.ssh_tool import SSH
+from version_control.utils.ssh_tool import CheckSSH
 from version_control.pagination import MyPageNumberPagination
 
 
@@ -93,7 +93,7 @@ class CheckServiceView(ModelViewSet):
         ip = data['ip']
         port = data['port']
         print(user,passwd,ip,port)
-        ssh = SSH(ip, port, user,passwd)
+        ssh = CheckSSH(ip, port, user,passwd)
         print(ssh.sshConnect())
         if not ssh.sshConnect():
             return Response(AUTHENTICATION_FAILED,status.HTTP_200_OK)
