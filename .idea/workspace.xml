@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed2c761a-dacb-43de-85bf-3a156909e19a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebSocketServer/websocket.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebSocketServer/websocket.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/version_control/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/version_control/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/version_control/views/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/version_control/views/server.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,61 +17,44 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/VersionControlServer$ssh_tool.coverage" NAME="ssh_tool Coverage Results" MODIFIED="1579431063829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/version_control/utils" />
     <SUITE FILE_PATH="coverage/VersionControlServer$linux_test.coverage" NAME="linux_test Coverage Results" MODIFIED="1579425713828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/version_control/utils" />
-    <SUITE FILE_PATH="coverage/VersionControlServer$websocket__1_.coverage" NAME="websocket (1) Coverage Results" MODIFIED="1579492599769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSocketServer" />
+    <SUITE FILE_PATH="coverage/VersionControlServer$websocket__1_.coverage" NAME="websocket (1) Coverage Results" MODIFIED="1579514591204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSocketServer" />
     <SUITE FILE_PATH="coverage/VersionControlServer$websocket.coverage" NAME="websocket Coverage Results" MODIFIED="1579489952751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/version_control" />
+    <SUITE FILE_PATH="coverage/VersionControlServer$websocket1.coverage" NAME="websocket1 Coverage Results" MODIFIED="1579511498235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSocketServer" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/version_control/views/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="177">
+              <caret line="96" column="30" selection-start-line="96" selection-start-column="14" selection-end-line="96" selection-end-column="30" />
               <folding>
-                <element signature="e#150#203#0" expanded="true" />
+                <element signature="e#150#163#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/version_control/utils/ssh_tool.py">
+        <entry file="file://$PROJECT_DIR$/version_control/utils/response.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="-754">
+              <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebSocketServer/websocket.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/version_control/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="359">
+              <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
               <folding>
-                <element signature="e#152#165#0" expanded="true" />
+                <element signature="e#155#193#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../VersionControlServer/Lib/site-packages/paramiko/channel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3588">
-              <caret line="166" column="13" selection-start-line="166" selection-start-column="8" selection-end-line="166" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -75,19 +62,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VersionControlServer/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="28" />
+            <state relative-caret-position="156">
+              <caret line="24" column="27" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="27" />
+              <folding>
+                <element signature="e#644#676#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VersionControlServer/settings.py">
+        <entry file="file://$PROJECT_DIR$/WebSocketServer/websocket.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
+            <state relative-caret-position="156">
+              <caret line="42" column="65" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="65" />
               <folding>
-                <element signature="e#320#330#0" expanded="true" />
+                <element signature="e#152#166#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,24 +111,26 @@
         <option value="$PROJECT_DIR$/apps/version_control/views/server.py" />
         <option value="$PROJECT_DIR$/apps/version_control/apps.py" />
         <option value="$PROJECT_DIR$/extre_apps/version_control/apps.py" />
-        <option value="$PROJECT_DIR$/version_control/serializers.py" />
         <option value="$PROJECT_DIR$/version_control/models.py" />
         <option value="$PROJECT_DIR$/version_control/utils/response.py" />
-        <option value="$PROJECT_DIR$/VersionControlServer/urls.py" />
         <option value="$PROJECT_DIR$/version_control/views/ssh.py" />
         <option value="$PROJECT_DIR$/version_control/utils/linux_test.py" />
-        <option value="$PROJECT_DIR$/version_control/views/server.py" />
         <option value="$PROJECT_DIR$/VersionControlServer/routing.py" />
         <option value="$PROJECT_DIR$/version_control/websocket.py" />
         <option value="$PROJECT_DIR$/version_control/utils/ssh_tool.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/VersionControlServer/settings.py" />
+        <option value="$PROJECT_DIR$/WebSocketServer/websocket1.py" />
+        <option value="$PROJECT_DIR$/WebSocketServer/websocket.py" />
+        <option value="$PROJECT_DIR$/VersionControlServer/urls.py" />
+        <option value="$PROJECT_DIR$/version_control/serializers.py" />
+        <option value="$PROJECT_DIR$/version_control/views/server.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="87" />
-    <option name="y" value="4" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="195" />
+    <option name="y" value="9" />
     <option name="width" value="1280" />
     <option name="height" value="717" />
   </component>
@@ -148,12 +140,27 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="VersionControlServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VersionControlServer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VersionControlServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VersionControlServer" type="462c0819:PsiDirectoryNode" />
+              <item name="version_control" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VersionControlServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VersionControlServer" type="462c0819:PsiDirectoryNode" />
+              <item name="version_control" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VersionControlServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VersionControlServer" type="462c0819:PsiDirectoryNode" />
               <item name="VersionControlServer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -165,6 +172,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -175,17 +183,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Desktop\code\VersionControlServer\WebSocketServer" />
-      <recent name="D:\Desktop\code\VersionControlServer" />
-      <recent name="D:\Desktop\code\VersionControlServer\apps" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Desktop\code\VersionControlServer\WebSocketServer" />
       <recent name="D:\Desktop\code\VersionControlServer\version_control\utils" />
       <recent name="D:\Desktop\code\VersionControlServer\VersionControlServer" />
       <recent name="D:\Desktop\code\VersionControlServer\apps\version_control" />
       <recent name="D:\Desktop\code\VersionControlServer\apps\service_configuration\views" />
-      <recent name="D:\Desktop\code\VersionControlServer\apps\service_configuration" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Desktop\code\VersionControlServer\WebSocketServer" />
+      <recent name="D:\Desktop\code\VersionControlServer" />
+      <recent name="D:\Desktop\code\VersionControlServer\apps" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -289,6 +297,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="websocket1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="VersionControlServer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WebSocketServer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebSocketServer/websocket1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="VersionControlServer" type="Python.DjangoServer" factoryName="Django server">
       <module name="VersionControlServer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -315,6 +345,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.websocket (1)" />
+        <item itemvalue="Python.websocket1" />
         <item itemvalue="Python.websocket" />
         <item itemvalue="Python.ssh_tool" />
         <item itemvalue="Python.linux_test" />
@@ -338,11 +369,12 @@
       <workItem from="1579405807627" duration="24214000" />
       <workItem from="1579491188389" duration="1068000" />
       <workItem from="1579492551899" duration="874000" />
+      <workItem from="1579503187674" duration="14830000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55312000" />
+    <option name="totallyTimeSpent" value="70142000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -354,23 +386,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="87" y="4" width="1280" height="717" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.75399363" visible="true" weight="0.25081968" />
-      <window_info id="Structure" order="1" sideWeight="0.24600638" side_tool="true" visible="true" weight="0.25081968" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.75061125" visible="true" weight="0.18229954" />
+      <window_info id="Structure" order="1" sideWeight="0.24938875" side_tool="true" visible="true" weight="0.18229954" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49918032" visible="true" weight="0.46404108" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49918032" weight="0.3797054" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="manage.py@VersionControlServer" order="9" sideWeight="0.49924356" weight="0.35273972" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5008197" side_tool="true" visible="true" weight="0.46404108" />
+      <window_info active="true" anchor="bottom" id="manage.py@VersionControlServer" order="9" sideWeight="0.49836066" visible="true" weight="0.33060557" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50163937" side_tool="true" weight="0.35273972" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32820514" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49924356" weight="0.40068492" />
       <window_info anchor="bottom" id="Python Console" order="13" />
@@ -410,6 +442,17 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../../VersionControlServer/Lib/site-packages/rest_framework/viewsets.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/VersionControlServer/utils/GitTool.py" />
@@ -457,27 +500,10 @@
     <entry file="file://$PROJECT_DIR$/version_control/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/version_control/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding>
-            <element signature="e#155#193#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../VersionControlServer/Lib/site-packages/paramiko/transport.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8320">
           <caret line="408" selection-start-line="408" selection-end-line="408" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/version_control/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="18" column="59" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -490,38 +516,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/version_control/views/ssh.py" />
     <entry file="file://$PROJECT_DIR$/version_control/utils/linux_test.py" />
-    <entry file="file://$PROJECT_DIR$/version_control/utils/response.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../VersionControlServer/Lib/site-packages/channels/utils.py" />
-    <entry file="file://$PROJECT_DIR$/../../VersionControlServer/Lib/site-packages/tornado/websocket.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7">
-          <caret line="230" column="14" selection-start-line="230" selection-start-column="14" selection-end-line="230" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../VersionControlServer/Lib/site-packages/channels/consumer.py" />
     <entry file="file://$PROJECT_DIR$/VersionControlServer/routing.py" />
     <entry file="file://$PROJECT_DIR$/version_control/utils/linux_test1.py" />
-    <entry file="file://$PROJECT_DIR$/version_control/views/server.py">
+    <entry file="file://$PROJECT_DIR$/VersionControlServer/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="211">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
           <folding>
-            <element signature="e#150#203#0" expanded="true" />
+            <element signature="e#320#330#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/version_control/utils/ssh_tool.py">
+    <entry file="file://$PROJECT_DIR$/../../VersionControlServer/Lib/site-packages/paramiko/channel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="2405">
+          <caret line="166" column="13" selection-start-line="166" selection-start-column="8" selection-end-line="166" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -532,36 +544,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../VersionControlServer/Lib/site-packages/paramiko/channel.py">
+    <entry file="file://$PROJECT_DIR$/WebSocketServer/websocket1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3588">
-          <caret line="166" column="13" selection-start-line="166" selection-start-column="8" selection-end-line="166" selection-end-column="13" />
+        <state relative-caret-position="1014">
+          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+          <folding>
+            <element signature="e#152#165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../VersionControlServer/Lib/site-packages/tornado/websocket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14319">
+          <caret line="403" lean-forward="true" selection-start-line="403" selection-end-line="403" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/version_control/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/version_control/utils/ssh_tool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-286">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/version_control/utils/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-754">
+          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../VersionControlServer/Lib/site-packages/rest_framework/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3935">
+          <caret line="853" column="6" selection-start-line="853" selection-start-column="6" selection-end-line="853" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../VersionControlServer/Lib/site-packages/rest_framework/viewsets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="194" column="7" lean-forward="true" selection-start-line="194" selection-start-column="7" selection-end-line="194" selection-end-column="7" />
+          <folding>
+            <element signature="e#676#711#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/VersionControlServer/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="28" />
+        <state relative-caret-position="156">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="27" />
+          <folding>
+            <element signature="e#644#676#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VersionControlServer/settings.py">
+    <entry file="file://$PROJECT_DIR$/version_control/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="359">
+          <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
           <folding>
-            <element signature="e#320#330#0" expanded="true" />
+            <element signature="e#155#193#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebSocketServer/websocket.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="156">
+          <caret line="42" column="65" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="65" />
           <folding>
-            <element signature="e#152#165#0" expanded="true" />
+            <element signature="e#152#166#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/version_control/views/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="96" column="30" selection-start-line="96" selection-start-column="14" selection-end-line="96" selection-end-column="30" />
+          <folding>
+            <element signature="e#150#163#0" expanded="true" />
           </folding>
         </state>
       </provider>

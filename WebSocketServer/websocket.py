@@ -4,6 +4,7 @@
 # @Email   : 499926587@qq.com
 # @File    : websocket.py
 # @Software: PyCharm
+import asyncio
 import base64
 import threading
 
@@ -12,24 +13,23 @@ import paramiko
 
 
 class MyThread(threading.Thread):
-    def __init__(self, id, chan):
+    def __init__(self, id, web_ssh_server):
         threading.Thread.__init__(self)
-        self.chan = chan
+        self.web_ssh_server = web_ssh_server
 
     def run(self):
-        while not self.chan.chan.exit_status_ready():
+        #解决tornado6版本 提示 There is no current event loop in thread-3 的错误。
+        asyncio.set_event_loop(asyncio.new_event_loop())
+        while 1:
             try:
-                data = self.chan.chan.recv(1024)
-                print(data)
+                data = self.web_ssh_server.chan.recv(1024)
                 if len(data) == 0:
                     break
-                self.chan.write_message(data)
-
+                self.web_ssh_server.write_message(data)
             except Exception as ex:
                 print(str(ex))
-        self.chan.sshclient.close()
+        self.web_ssh_server.sshclient.close()
         return False
-
 
 
 class WebSSHServer(tornado.websocket.WebSocketHandler):
@@ -47,8 +47,9 @@ class WebSSHServer(tornado.websocket.WebSocketHandler):
         self.sshclient.load_system_host_keys()
         self.sshclient.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         self.sshclient.connect(HOSTS, PORT, USERNAME, PASSWORD)
-        self.chan = self.sshclient.invoke_shell(term='xterm',width=800,height=600)
-        t1 = MyThread(1, self)
+        self.chan = self.sshclient.invoke_shell(term='xterm',width=130,height=60)
+
+        t1 = MyThread(999, self)
         t1.setDaemon(True)
         t1.start()
 

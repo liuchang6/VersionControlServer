@@ -22,6 +22,7 @@ from rest_framework.routers import SimpleRouter
 router = SimpleRouter()
 router.register('server', server.ServerInfoView)
 router.register('check_server', server.CheckServiceView)
+router.register('get_server', server.ConnectServiceInfoView)
 
 
 urlpatterns = [

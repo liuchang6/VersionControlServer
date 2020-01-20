@@ -5,13 +5,16 @@
 # @File    : service.py
 # @Software: PyCharm
 
+import base64
+
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import status
-from rest_framework.viewsets import ModelViewSet
+from rest_framework import  mixins
+from rest_framework.viewsets import ModelViewSet,GenericViewSet
 from rest_framework.response import Response
 
 from version_control.models import ServerInfo
-from version_control.serializers import ServerInfoSerializer
+from version_control.serializers import ServerInfoSerializer,ConnectServerInfoSerializer
 from version_control.utils.response import *
 from version_control.utils.ssh_tool import CheckSSH
 from version_control.pagination import MyPageNumberPagination
@@ -27,7 +30,7 @@ from version_control.pagination import MyPageNumberPagination
 
 class ServerInfoView(ModelViewSet):
     '''
-    项目管理
+    服务管理
     '''
 
     queryset = ServerInfo.objects.filter(
@@ -39,7 +42,7 @@ class ServerInfoView(ModelViewSet):
 
     def list(self, request):
         """
-        所有项目信息
+        所有服务信息
         """
         Servers = self.get_queryset()
         page_Servers = self.paginate_queryset(Servers)
@@ -48,7 +51,7 @@ class ServerInfoView(ModelViewSet):
 
     def create(self, request):
         """
-        创建项目
+        创建服务
         """
 
         name = request.data["name"]
@@ -58,29 +61,50 @@ class ServerInfoView(ModelViewSet):
         serializer = ServerInfoSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(PROJECT_ADD_SUCCESS)
+            return Response(SERVICE_ADD_SUCCESS)
 
         return Response(SYSTEM_ERROR)
 
     def retrieve(self, request, **kwargs):
         """
-        单个项目信息
+        单个服务信息
         """
         pk = kwargs.pop('pk')
         try:
             queryset = ServerInfo.objects.get(id=pk)
         except ObjectDoesNotExist:
-            return Response(PROJECT_NOT_EXISTS)
+            return Response(SERVICE_NOT_EXISTS)
         serializer = self.get_serializer(queryset, many=False)
         BASE['data'] = serializer.data
         return Response(BASE)
 
 
-class CheckServiceView(ModelViewSet):
+class ConnectServiceInfoView(GenericViewSet,mixins.RetrieveModelMixin):
+    """
+    连接服务器信息
+    """
+    queryset = ServerInfo.objects.filter(
+        delete=1)
+    serializer_class = ConnectServerInfoSerializer
+
+    def retrieve(self, request, *args, **kwargs):
+        pk = kwargs.pop('pk')
+        try:
+            queryset = ServerInfo.objects.get(id=pk)
+        except ObjectDoesNotExist:
+            return Response(SERVICE_NOT_EXISTS)
+        serializer = self.get_serializer(queryset, many=False)
+        password = base64.b64encode(serializer.data['password'].encode())
+        BASE['data'] = serializer.data
+        BASE['data']['password'] = password
+        return Response(BASE)
+
+class CheckServiceView(GenericViewSet,mixins.CreateModelMixin):
     """
     服务信息
     """
-    queryset = ServerInfo.objects.all()
+    queryset = ServerInfo.objects.filter(
+        delete=1)
     serializer_class = ServerInfoSerializer
 
     def create(self, request):

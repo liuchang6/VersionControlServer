@@ -19,5 +19,12 @@ class ServerInfoSerializer(serializers.ModelSerializer):
     create_time = serializers.DateTimeField(read_only=True,format='%Y-%m-%d %H:%M:%S', required=False)
     class Meta:
         model = ServerInfo
-        exclude  = ['delete']
+        exclude = ['delete']
 
+class ConnectServerInfoSerializer(serializers.ModelSerializer):
+    """
+    服务信息序列化
+    """
+    class Meta:
+            model = ServerInfo
+            fields = ['password','user','ip','port']
