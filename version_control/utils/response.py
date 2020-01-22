@@ -4,6 +4,11 @@
 # @Email   : 499926587@qq.com
 # @File    : response.py
 # @Software: PyCharm
+BASE = {
+    "code": "0000",
+    "success": True,
+    "data": ""
+}
 
 PROJECT_ADD_SUCCESS = {
     "code": "0001",
@@ -26,17 +31,11 @@ PROJECT_NOT_EXISTS = {
 AUTHENTICATION_FAILED = {
     "code": "0103",
     "success": False,
-    "msg": "git验证失败"
+    "msg": "验证失败"
 }
 
-CONNECT_TIME_OUT = {
+SERVER_CHECK_OK = {
     "code": "0104",
-    "success": False,
-    "msg": "git连接超时"
-}
-
-CHECK_OK = {
-    "code": "0105",
     "success": True,
     "msg": "测试通过"
 }
@@ -86,7 +85,7 @@ PROJECT_DELETE_SUCCESS = {
 SYSTEM_ERROR = {
     "code": "9999",
     "success": False,
-    "msg": "System Error"
+    "msg": "后台服务器错误"
 }
 
 TREE_ADD_SUCCESS = {

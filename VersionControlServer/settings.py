@@ -15,7 +15,6 @@ from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(os.path.join(BASE_DIR,'apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -38,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.service_configuration.apps.ServiceConfigurationConfig',
+    'rest_framework',
+    'corsheaders',
+    'version_control',
 ]
 
 MIDDLEWARE = [
@@ -82,8 +83,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',   # 数据库引擎
         'NAME': 'test',  # 数据库名，先前创建的
         'USER': 'root',     # 用户名，可以自己创建用户
-        'PASSWORD': 'root',  # 密码
-        'HOST': '127.0.0.1',  # mysql服务所在的主机ip
+        'PASSWORD': '123456',  # 密码
+        'HOST': 'localhost',  # mysql服务所在的主机ip
         'PORT': '3306',         # mysql服务端口
     }
 }

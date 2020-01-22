@@ -2,7 +2,7 @@
 # @Time    : 2019/12/31 14:56
 # @Author  : changliu
 # @Email   : 499926587@qq.com
-# @File    : GitTool.py
+# @File    : git_tool.py
 # @Software: PyCharm
 import subprocess
 import os
