@@ -14,6 +14,7 @@ class ServerInfoSerializer(serializers.ModelSerializer):
     """
     status = serializers.CharField( read_only=True)
     password = serializers.CharField(required=True,write_only=True)
+    creater = serializers.CharField(required=False)
     check_time = serializers.DateTimeField(read_only=True,format='%Y-%m-%d %H:%M:%S', required=False)
     update_time = serializers.DateTimeField(read_only=True,format='%Y-%m-%d %H:%M:%S', required=False)
     create_time = serializers.DateTimeField(read_only=True,format='%Y-%m-%d %H:%M:%S', required=False)
@@ -27,4 +28,4 @@ class ConnectServerInfoSerializer(serializers.ModelSerializer):
     """
     class Meta:
             model = ServerInfo
-            fields = ['password','user','ip','port']
+            fields = ['name','password','user','ip','port','desc']

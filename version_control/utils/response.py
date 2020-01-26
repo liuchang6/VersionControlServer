@@ -46,6 +46,18 @@ SERVICE_ADD_SUCCESS = {
     "msg": "服务添加成功"
 }
 
+SERVICE_UPDATE_SUCCESS = {
+    "code": "0003",
+    "success": True,
+    "msg": "服务编辑成功"
+}
+
+SERVICE_DELETE_SUCCESS = {
+    "code": "0004",
+    "success": True,
+    "msg": "服务删除成功"
+}
+
 SERVICE_EXISTS = {
     "code": "0106",
     "success": False,

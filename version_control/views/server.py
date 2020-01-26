@@ -8,12 +8,12 @@
 import base64
 
 from django.core.exceptions import ObjectDoesNotExist
-from rest_framework import status
-from rest_framework import  mixins
+from rest_framework import status,mixins
 from rest_framework.viewsets import ModelViewSet,GenericViewSet
 from rest_framework.response import Response
 
 from version_control.models import ServerInfo
+from version_control.filters import ServerFilter
 from version_control.serializers import ServerInfoSerializer,ConnectServerInfoSerializer
 from version_control.utils.response import *
 from version_control.utils.ssh_tool import CheckSSH
@@ -37,6 +37,8 @@ class ServerInfoView(ModelViewSet):
         delete=1).order_by(
         '-create_time',
         '-update_time')
+    filter_class = ServerFilter
+    filter_fields = ("name","ip")
     serializer_class = ServerInfoSerializer
     pagination_class = MyPageNumberPagination
 
@@ -53,7 +55,6 @@ class ServerInfoView(ModelViewSet):
         """
         创建服务
         """
-
         name = request.data["name"]
         if ServerInfo.objects.filter(name=name).first():
             SERVICE_EXISTS["name"] = name
@@ -71,12 +72,31 @@ class ServerInfoView(ModelViewSet):
         """
         pk = kwargs.pop('pk')
         try:
-            queryset = ServerInfo.objects.get(id=pk)
+            queryset = ServerInfo.objects.filter(
+        delete=1).get(id=pk)
         except ObjectDoesNotExist:
             return Response(SERVICE_NOT_EXISTS)
         serializer = self.get_serializer(queryset, many=False)
         BASE['data'] = serializer.data
         return Response(BASE)
+
+    def update(self,request, **kwargs):
+        pk = kwargs.pop('pk')
+        queryset = ServerInfo.objects.get(id=pk)
+        serializer = ServerInfoSerializer(queryset,data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(SERVICE_UPDATE_SUCCESS)
+        return Response(SYSTEM_ERROR)
+
+    def destroy(self, request, *args, **kwargs):
+        pk = kwargs.pop('pk')
+        try:
+            ServerInfo.objects.filter(id=pk).update(**{'delete':'0'})
+        except ObjectDoesNotExist:
+            return Response(SERVICE_NOT_EXISTS)
+        return Response(SERVICE_DELETE_SUCCESS)
+
 
 
 class ConnectServiceInfoView(GenericViewSet,mixins.RetrieveModelMixin):
@@ -116,10 +136,8 @@ class CheckServiceView(GenericViewSet,mixins.CreateModelMixin):
         passwd = data['password']
         ip = data['ip']
         port = data['port']
-        print(user,passwd,ip,port)
         ssh = CheckSSH(ip, port, user,passwd)
-        print(ssh.sshConnect())
-        if not ssh.sshConnect():
-            return Response(AUTHENTICATION_FAILED,status.HTTP_200_OK)
-        else:
+        if ssh.sshConnect():
             return Response(SERVER_CHECK_OK, status.HTTP_200_OK)
+        else:
+            return Response(AUTHENTICATION_FAILED,status.HTTP_200_OK)

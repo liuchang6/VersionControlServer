@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_filters',
     'corsheaders',
     'version_control',
 ]
@@ -54,6 +55,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'VersionControlServer.urls'
+
+REST_FRAMEWORK = {
+    # drf过滤器
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+}
+
 
 TEMPLATES = [
     {
@@ -135,3 +142,4 @@ STATIC_URL = '/static/'
 #跨域
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
+
