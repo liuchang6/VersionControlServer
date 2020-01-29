@@ -8,9 +8,10 @@
 import base64
 
 from django.core.exceptions import ObjectDoesNotExist
-from rest_framework import status,mixins
+from rest_framework import status,mixins,filters
 from rest_framework.viewsets import ModelViewSet,GenericViewSet
 from rest_framework.response import Response
+from django_filters.rest_framework import DjangoFilterBackend
 
 from version_control.models import ServerInfo
 from version_control.filters import ServerFilter
@@ -37,10 +38,12 @@ class ServerInfoView(ModelViewSet):
         delete=1).order_by(
         '-create_time',
         '-update_time')
-    filter_class = ServerFilter
-    filter_fields = ("name","ip")
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['name', 'ip']
     serializer_class = ServerInfoSerializer
     pagination_class = MyPageNumberPagination
+    authentication_classes = ()
+    permissions_classes = ()
 
     def list(self, request):
         """

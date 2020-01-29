@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-import sys
 import os
+import sys
+import datetime
 from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,7 +27,6 @@ SECRET_KEY = '9nz_&@f8wq03$r4x+k#=%%$em7p!kr#xut2b2zmakn1p!g^pz5'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -56,9 +56,26 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'VersionControlServer.urls'
 
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=86400),
+    'JWT_AUTH_HEADER_PREFIX': 'JWT',
+    'JWT_RESPONSE_PAYLOAD_HANDLER':'version_control.utils.jwt_handler.jwt_response_payload_handler',
+}
+
 REST_FRAMEWORK = {
-    # drf过滤器
-    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+        'rest_framework.filters.OrderingFilter',
+    )
+    # 'DEFAULT_PERMISSION_CLASSES': (
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ),
+
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #     'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    # ),
+
 }
 
 

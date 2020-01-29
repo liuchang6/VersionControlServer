@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+
+
 class ServerInfo(models.Model):
     """
     配置信息
@@ -27,11 +29,9 @@ class ServerInfo(models.Model):
     update_time = models.DateTimeField('更新时间', auto_now_add=True)
     delete = models.CharField(max_length = 1,verbose_name = '是否删除',choices=delete_choices,default=1)
 
-
     class Meta():
         db_table = 'server_info'
         verbose_name = '服务配置信息'
-
 
     def __str__(self):
         return self.name

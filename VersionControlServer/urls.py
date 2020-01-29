@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from version_control.views import server
 from rest_framework.routers import SimpleRouter
+from rest_framework_jwt.views import obtain_jwt_token
+
+from version_control.views import server
 
 
 router = SimpleRouter()
@@ -27,5 +29,6 @@ router.register('get_server', server.ConnectServiceInfoView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('auth_token/', obtain_jwt_token),
     path(r'api/', include(router.urls)),
 ]
