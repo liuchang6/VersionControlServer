@@ -8,3 +8,7 @@ mysqlclient               1.4.6
 paramiko                  2.7.1
 tornado                   6.0.3
 djangorestframework-jwt	  1.11.0
+django-celery             3.3.1
+flower                    0.9.3
+
+

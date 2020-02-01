@@ -16,19 +16,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework.routers import SimpleRouter
-from rest_framework_jwt.views import obtain_jwt_token
 
-from version_control.views import server
+from version_control.views import server,login,repository
 
 
 router = SimpleRouter()
 router.register('server', server.ServerInfoView)
 router.register('check_server', server.CheckServiceView)
 router.register('get_server', server.ConnectServiceInfoView)
+router.register('repository', repository.RepositoryInfoView)
+router.register('check_repository', repository.CheckRepositoryView)
+router.register('get_repository', repository.ConnectRepositoryInfoView)
 
+login_router = SimpleRouter()
+login_router.register('login',login.LoginView)
+login_router.register('check_token',login.CheckTokenView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth_token/', obtain_jwt_token),
+    path('', include(login_router.urls)),
     path(r'api/', include(router.urls)),
 ]

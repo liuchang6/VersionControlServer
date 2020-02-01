@@ -4,8 +4,9 @@
 # @Email   : 499926587@qq.com
 # @File    : websocket.py
 # @Software: PyCharm
-import asyncio
+
 import base64
+import asyncio
 import threading
 
 import tornado.websocket
@@ -28,6 +29,7 @@ class MyThread(threading.Thread):
                 self.web_ssh_server.write_message(data)
             except Exception as ex:
                 print(str(ex))
+                self.web_ssh_server.sshclient.close()
         self.web_ssh_server.sshclient.close()
         return False
 
@@ -35,14 +37,14 @@ class MyThread(threading.Thread):
 class WebSSHServer(tornado.websocket.WebSocketHandler):
 
     def open(self):
+
         USERNAME = self.get_argument('user','')
         HOSTS = self.get_argument('host','')
-        PORT = int(self.get_argument('port',''))
+        PORT = self.get_argument('port','')
         PASSWORD = self.get_argument('password','')
-        if PASSWORD:
-            PASSWORD = base64.b64decode(PASSWORD).decode('utf-8')
-        else:
-            PASSWORD = None
+
+        PASSWORD = base64.b64decode(PASSWORD).decode("utf-8")
+
         self.sshclient = paramiko.SSHClient()
         self.sshclient.load_system_host_keys()
         self.sshclient.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -55,7 +57,6 @@ class WebSSHServer(tornado.websocket.WebSocketHandler):
 
     def on_message(self, message):
         try:
-            print(message)
             self.chan.send(message)
         except Exception as ex:
             print(str(ex))

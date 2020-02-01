@@ -34,40 +34,46 @@ AUTHENTICATION_FAILED = {
     "msg": "验证失败"
 }
 
-SERVER_CHECK_OK = {
+TIME_OUT_ERROR = {
     "code": "0104",
+    "success": False,
+    "msg": "连接超时"
+}
+
+ADD_SUCCESS = {
+    "code": "0002",
+    "success": True,
+    "msg": "添加成功"
+}
+
+UPDATE_SUCCESS = {
+    "code": "0003",
+    "success": True,
+    "msg": "编辑成功"
+}
+
+DELETE_SUCCESS = {
+    "code": "0004",
+    "success": True,
+    "msg": "删除成功"
+}
+
+CHECK_OK = {
+    "code": "0005",
     "success": True,
     "msg": "测试通过"
 }
 
-SERVICE_ADD_SUCCESS = {
-    "code": "0002",
-    "success": True,
-    "msg": "服务添加成功"
-}
-
-SERVICE_UPDATE_SUCCESS = {
-    "code": "0003",
-    "success": True,
-    "msg": "服务编辑成功"
-}
-
-SERVICE_DELETE_SUCCESS = {
-    "code": "0004",
-    "success": True,
-    "msg": "服务删除成功"
-}
-
-SERVICE_EXISTS = {
+NAME_EXISTS = {
     "code": "0106",
     "success": False,
-    "msg": "服务已存在"
+    "msg": "该名称已存在"
 }
 
-SERVICE_NOT_EXISTS = {
+NAME_NOT_EXISTS = {
     "code": "0107",
     "success": False,
-    "msg": "服务不存在"
+    "msg": "该名称不存在"
 }
 
 DEBUGTALK_NOT_EXISTS = {

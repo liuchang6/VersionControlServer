@@ -12,7 +12,11 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import sys
 import datetime
+
+import djcelery
+from celery.schedules import crontab
 from django.utils.translation import gettext_lazy as _
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_filters',
+	'djcelery',
     'corsheaders',
     'version_control',
 ]
@@ -56,34 +61,47 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'VersionControlServer.urls'
 
+AUTH_USER_MODEL = 'version_control.UserInfo'
+
 JWT_AUTH = {
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=86400),
-    'JWT_AUTH_HEADER_PREFIX': 'JWT',
-    'JWT_RESPONSE_PAYLOAD_HANDLER':'version_control.utils.jwt_handler.jwt_response_payload_handler',
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=60*60*24),
 }
 
 REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'version_control.utils.jwt_auth.JWTAuthentication',
+    ),
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
-    )
-    # 'DEFAULT_PERMISSION_CLASSES': (
-    #     'rest_framework.permissions.IsAuthenticated',
-    # ),
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}
+djcelery.setup_loader()
+# Celery settings
+BROKER_URL = 'amqp://admin:admin@49.235.71.24:5672/test',
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Asia/Shanghai',
+CELERY_ENABLE_UTC = False
 
-    # 'DEFAULT_AUTHENTICATION_CLASSES': (
-    #     'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-    # ),
-
+CELERYBEAT_SCHEDULE = {
+    '每天执行一次检查服务器连接测试': {
+        'task': 'version_control.tasks.check_git_status',
+        'schedule': crontab(minute='*/1'),
+        'args': ()
+    },
 }
 
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -110,6 +128,9 @@ DATABASES = {
         'PASSWORD': '123456',  # 密码
         'HOST': 'localhost',  # mysql服务所在的主机ip
         'PORT': '3306',         # mysql服务端口
+        'OPTIONS': {
+            "init_command": "SET foreign_key_checks = 0;",
+                    }
     }
 }
 
@@ -155,6 +176,8 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOCAL_GIT_REPOSITORY_PATH = os.path.join(BASE_DIR,'GitRepository')
 
 #跨域
 CORS_ALLOW_CREDENTIALS = True

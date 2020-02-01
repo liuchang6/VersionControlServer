@@ -74,9 +74,9 @@ class GitRepository(object):
         try:
             info = self.git_cmd(check_cmd)
             if 'Authentication failed' in str(info) or 'Could not read from remote repository' in  str(info):
-                return 1
+                return 'AuthenticationFailed'
         except:
-            return 0
+            return 'TimeOut'
         if 'heads' in str(info):
             for i in str(list(info)[0],encoding = "utf-8").split('\n'):
                 if i.split().__len__()>1:
